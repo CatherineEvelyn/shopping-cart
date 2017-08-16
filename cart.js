@@ -19,12 +19,12 @@ function calculate(itemPrice) {
     $('#calculator').empty();
     $('#calculator').append('<p><div>');
     subTotal += parseFloat(priceInDecimal);
-    $('#calculator').append("sub total: $" + subTotal);
+    $('#calculator').append("sub total: $" + subTotal.toFixed(2));
     $('#calculator').append('<p><div>');
     tax = subTotal*10/100;
-    $('#calculator').append("tax: $" + tax);
+    $('#calculator').append("tax: $" + tax.toFixed(2));
     $('#calculator').append('<p><div>');
     total = subTotal + tax;
-    $('#calculator').append("Total: $" + total);
+    $('#calculator').append("Total: $" + total.toFixed(2));
 
 }
