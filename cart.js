@@ -1,3 +1,8 @@
+function hideShippingForm() {
+    $('#shipping-form').hide();
+}
+hideShippingForm();
+
 $('.add').click(function() {
     let productName = $(this).parent().siblings('p').first().text();
     let itemPrice = $(this).parent().siblings('p').eq(1).text();
@@ -27,4 +32,14 @@ function calculate(itemPrice) {
     total = subTotal + tax;
     $('#calculator').append("Total: $" + total.toFixed(2));
 
+    $('#calculator').append('<p><input type=button value="Next" id="next" class="test" />');
+
+    $('.test').click(function() {
+        console.log("wowowowowow");
+        $('#shipping-form').show();
+    });
 }
+
+$('#finish').click(function() {
+    window.alert('Thank you for your order!');
+});
